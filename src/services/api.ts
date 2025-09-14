@@ -11,23 +11,16 @@ import type {
   Stats,
 } from "@/types";
 
-// API Configuration
-// Development: uses proxy to avoid CORS (/api -> backend)  
-// Production: calls backend directly with full URL
 const API_BASE_URL = import.meta.env.VITE_API_URL || "/api";
 
-// Debug logging in development
-if (import.meta.env.DEV) {
-  console.log("🔗 API Base URL:", API_BASE_URL);
-  console.log("🌍 Environment:", import.meta.env.MODE);
-}
+console.log("🌐 Kiểm tra backend URL:", API_BASE_URL);
 
 const api = axios.create({
   baseURL: API_BASE_URL,
   headers: {
     "Content-Type": "application/json",
   },
-  timeout: 15000, // 15 second timeout
+  withCredentials: true, // Important for CORS with credentials
 });
 
 // Request interceptor to add auth token
@@ -43,33 +36,19 @@ api.interceptors.request.use((config) => {
 api.interceptors.response.use(
   (response) => response,
   (error) => {
-    // Enhanced error logging for debugging
-    if (import.meta.env.DEV) {
-      console.error("🚨 API Error Details:", {
-        url: error.config?.url,
-        method: error.config?.method?.toUpperCase(),
-        baseURL: error.config?.baseURL,
-        fullURL: `${error.config?.baseURL}${error.config?.url}`,
-        status: error.response?.status,
-        statusText: error.response?.statusText,
-        message: error.message,
-        responseData: error.response?.data,
-      });
+    console.log("🚨 API Error Details:", error);
+
+    if (error.code === "ERR_NETWORK") {
+      console.log("🌐 Network error - không thể kết nối server");
+      console.log("Kiểm tra backend URL:", API_BASE_URL);
     }
 
-    // Handle specific error cases
-    if (error.code === 'ECONNABORTED') {
-      console.error("⏰ Request timeout - kiểm tra kết nối mạng");
-    } else if (!error.response) {
-      console.error("🌐 Network error - không thể kết nối server");
-      console.error("Kiểm tra backend URL:", API_BASE_URL);
-    } else if (error.response?.status === 401) {
-      // Unauthorized - clear auth and redirect
+    if (error.response?.status === 401) {
       localStorage.removeItem("authToken");
       localStorage.removeItem("user");
       window.location.href = "/login";
     }
-    
+
     return Promise.reject(error);
   }
 );
