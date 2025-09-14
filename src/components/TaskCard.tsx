@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import RemoveTaskDialog from "./RemoveTaskDialog";
 import { motion } from "framer-motion";
 import {
   Calendar,
@@ -36,6 +37,8 @@ const TaskCard: React.FC<TaskCardProps> = ({
   onClick,
 }) => {
   const [showMenu, setShowMenu] = useState(false);
+  const [showRemoveDialog, setShowRemoveDialog] = useState(false);
+  const [removing, setRemoving] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -244,9 +247,7 @@ const TaskCard: React.FC<TaskCardProps> = ({
                         className="flex items-center w-full gap-2 px-3 py-2 text-sm text-left text-red-600 hover:bg-gray-100"
                         onClick={(e) => {
                           e.stopPropagation();
-                          if (confirm("Bạn có chắc muốn xóa task này?")) {
-                            onDelete(task.id);
-                          }
+                          setShowRemoveDialog(true);
                           setShowMenu(false);
                         }}
                       >
@@ -311,6 +312,25 @@ const TaskCard: React.FC<TaskCardProps> = ({
           )}
         </CardContent>
       </Card>
+
+      {/* Remove Task Dialog */}
+      {onDelete && (
+        <RemoveTaskDialog
+          open={showRemoveDialog}
+          onCancel={() => {
+            setShowRemoveDialog(false);
+            setRemoving(false);
+          }}
+          onConfirm={async () => {
+            setRemoving(true);
+            await onDelete(task.id);
+            setRemoving(false);
+            setShowRemoveDialog(false);
+          }}
+          taskTitle={task.title}
+          loading={removing}
+        />
+      )}
     </motion.div>
   );
 };

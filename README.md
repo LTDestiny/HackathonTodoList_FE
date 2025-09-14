@@ -47,14 +47,9 @@ npm run db:seed
 npm run dev
 ```
 
-**Application URLs:**
-
-- Frontend: `http://localhost:5173`
-- Backend API: `http://localhost:5000`
-
 ## 🔗 Deployed Web URL or APK file
 
-✍️ [Paste your link here]
+https://hackathon-todo-list-ixze3cnpr-destinyyys-projects.vercel.app/
 
 ## 🎥 Demo Video
 
@@ -353,11 +348,95 @@ The application showcases contemporary web development best practices:
 
 ### If you had more time, what would you expand?
 
-✍️ [Write your content here]
+**1. Calendar-Based Task Management**
+
+- **Weekly Calendar View**: Implement a 7-day calendar interface with tasks organized by days
+- **Time-based Organization**: Divide each day into three periods - Morning, Afternoon, Evening
+- **Drag & Drop Functionality**: Allow users to drag tasks between different time slots and days
+- **Visual Task Distribution**: Color-coded tasks based on priority levels and categories
+- **Monthly/Yearly Calendar Views**: Extended calendar functionality for long-term planning
+- **Recurring Tasks**: Support for daily, weekly, monthly recurring task patterns
+
+**2. Financial Management Integration**
+
+- **Expense Tracking for Tasks**: Add financial context to tasks (e.g., "Buy textbooks - $200", "Part-time job - +$500")
+- **Income/Expense Categories**: Classify financial tasks as income or expenses with detailed categorization
+- **Financial Reports**: Generate comprehensive reports by week, month, quarter, and year
+- **Budget Planning**: Set spending limits per category and track against actual expenses
+- **Financial Goal Tracking**: Monitor savings goals and spending patterns related to academic/personal tasks
+- **Receipt Management**: Attach receipts and financial documents to expense-related tasks
+
+**3. Advanced Analytics & Reporting**
+
+- **Multi-dimensional Statistics**: Comprehensive analytics across time periods (weekly, monthly, quarterly, yearly)
+- **Interactive Charts & Graphs**:
+  - Priority distribution charts (High/Medium/Low task completion rates)
+  - Category performance analysis (Academic, Personal, Work productivity metrics)
+  - Timeline completion trends and patterns
+  - Task completion rate vs. deadline adherence
+- **Performance Insights**: Identify peak productivity periods and optimization opportunities
+- **Comparative Analytics**: Year-over-year progress tracking and seasonal productivity patterns
+- **Exportable Reports**: PDF/Excel export functionality for academic or professional reporting
+
+**4. Enhanced User Experience**
+
+- **Dark/Light Theme Toggle**: Comprehensive theming system with user preferences
+- **Mobile-First Progressive Web App**: Full offline functionality and mobile app experience
+- **Advanced Notifications**: Smart reminders based on user behavior and task urgency
+- **Collaboration Features**: Shared task lists for group projects and team coordination
+- **Task Templates**: Pre-built templates for common academic and personal task types
+
+**5. Smart Notification System**
+
+- **Real-time Push Notifications**: Browser and mobile push notifications for task deadlines and reminders
+- **Smart Notification Timing**: AI-powered optimal notification timing based on user's active hours and productivity patterns
+- **Notification Types**:
+  - Deadline alerts (1 day, 1 hour, 15 minutes before due)
+  - Daily/weekly task summaries and progress reports
+  - Overdue task reminders with suggested rescheduling
+  - Achievement celebrations and milestone notifications
+  - Budget alerts and financial goal progress updates
+- **Customizable Notification Settings**: User-defined preferences for notification frequency, types, and channels
+- **In-app Notification Center**: Centralized notification history with action buttons (snooze, complete, reschedule)
+- **Email Digest**: Weekly/monthly email summaries with task completion statistics and upcoming deadlines
+- **Cross-platform Synchronization**: Consistent notifications across web, mobile, and desktop applications
 
 ### If you integrate AI APIs more for your app, what would you do?
 
-✍️ [Write your content here]
+**1. Intelligent Task Management**
+
+- **Smart Task Prioritization**: Use AI to automatically prioritize tasks based on deadlines, user behavior, and historical completion patterns
+- **Natural Language Task Creation**: Allow users to create tasks using natural language (e.g., "Remind me to study for math exam next Friday at 3 PM")
+- **Deadline Prediction**: AI-powered suggestions for realistic deadlines based on task complexity and user's past performance
+- **Task Breakdown**: Automatically break down complex tasks into smaller, manageable subtasks using AI analysis
+
+**2. Personalized Productivity Insights**
+
+- **Productivity Pattern Analysis**: AI analysis of user behavior to identify peak productivity hours and optimal task scheduling
+- **Burnout Prevention**: Smart detection of overloading patterns and suggestions for workload redistribution
+- **Goal Achievement Coaching**: AI-powered recommendations for achieving academic and personal goals more effectively
+- **Habit Formation**: Intelligent suggestions for building productive habits based on task completion data
+
+**3. Advanced Financial Intelligence**
+
+- **Expense Prediction**: AI-powered forecasting of monthly expenses based on historical spending patterns and upcoming tasks
+- **Budget Optimization**: Smart recommendations for budget allocation across different categories (academic, personal, entertainment)
+- **Financial Goal Planning**: AI assistance in creating realistic saving plans and investment strategies for students
+- **Anomaly Detection**: Automatic detection of unusual spending patterns or potential financial issues
+
+**4. Smart Communication & Collaboration**
+
+- **Meeting Summarization**: AI-powered extraction of action items from meeting notes or recorded conversations
+- **Email Integration**: Automatic task creation from email content using NLP processing
+- **Study Group Coordination**: AI matching of students with similar academic goals and complementary skills
+- **Progress Reporting**: Automated generation of progress reports for academic advisors or supervisors
+
+**5. Contextual Assistance**
+
+- **Location-Based Reminders**: AI-powered suggestions for tasks based on user location (e.g., library visits, campus events)
+- **Weather-Adaptive Planning**: Automatic task rescheduling based on weather conditions for outdoor activities
+- **Academic Calendar Integration**: Smart synchronization with university schedules and important academic dates
+- **Voice Assistant Integration**: Hands-free task management through voice commands and verbal updates
 
 ## ✅ Checklist
 
